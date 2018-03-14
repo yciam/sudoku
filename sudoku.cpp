@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "gfield.h"
+#include "cfield.h"
 
 using namespace std;
 
@@ -25,6 +26,7 @@ int main(int argc, char const *argv[]) {
   vector<vector<int>> field ={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
   field = generatefield(3, field);
   draw(field);
+  checkfield(field);
   while (true) {}
   return 0;
 }
