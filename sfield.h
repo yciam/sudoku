@@ -2,9 +2,22 @@
 #define SFIELD_H
 
 #include <vector>
-#include <iostream>
+#include "cfield.h"
 
 using namespace std;
+
+vector<vector<int>> getnums(vector<vector<int>> field,vector<vector<vector<int>>> pnumsoffield){
+  for(int a = 0; a < 9; a++){
+    for(int b = 0; b < 9; b++){
+      if(pnumsoffield[a][b].size() == 1){
+        if(pnumsoffield[a][b][0] != 0){
+          field[a][b] = pnumsoffield[a][b][0];
+        }
+      }
+    }
+  }
+  return field;
+}
 
 /**
   @brief removes the impossible numbers from pnumsoffield
@@ -75,14 +88,18 @@ vector<vector<vector<int>>> getpnumsoffield(vector<vector<int>> field){
 */
 vector<vector<int>> solvefield(vector<vector<int>> field){
   vector<vector<vector<int>>> pnumsoffield;
+  vector<vector<int>> oldfield = field;
   pnumsoffield = getpnumsoffield(field);
-  for(int a = 0; a < 9; a++){
-    for(int b = 0; b < 9; b++){
-      cout << a << " " << b << endl;
-      pnumsoffield = cleardoubles(pnumsoffield, field,a,b);
+  while(!checkfield(field)){
+    oldfield = field;
+    for(int a = 0; a < 9; a++){
+      for(int b = 0; b < 9; b++){
+        pnumsoffield = cleardoubles(pnumsoffield, field,a,b);
+      }
     }
+    field = getnums(field, pnumsoffield);
+    if(field == oldfield) break;
   }
-
   return field;
 }
 

@@ -27,9 +27,9 @@ int main(int argc, char const *argv[]) {
   vector<vector<int>> field ={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
   field = generatefield(3, field);
   draw(field);
-  checkfield(field);
-  solvefield(field);
+  field = solvefield(field);
   draw(field);
+  if(checkfield(field)){cout << "SOLVED!" << endl;}
   while (true) {}
   return 0;
 }
