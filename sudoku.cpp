@@ -2,6 +2,7 @@
 #include <vector>
 #include "gfield.h"
 #include "cfield.h"
+#include "sfield.h"
 
 using namespace std;
 
@@ -27,6 +28,8 @@ int main(int argc, char const *argv[]) {
   field = generatefield(3, field);
   draw(field);
   checkfield(field);
+  solvefield(field);
+  draw(field);
   while (true) {}
   return 0;
 }
