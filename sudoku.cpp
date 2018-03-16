@@ -3,6 +3,7 @@
 #include "gfield.h"
 #include "cfield.h"
 #include "sfield.h"
+#include <chrono>
 
 using namespace std;
 
@@ -24,12 +25,15 @@ void draw(vector<vector<int>> field){
 }
 
 int main(int argc, char const *argv[]) {
+  auto begin = std::chrono::high_resolution_clock::now();
   vector<vector<int>> field ={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
   field = generatefield(3, field);
   draw(field);
   field = solvefield(field);
   draw(field);
   if(checkfield(field)){cout << "SOLVED!" << endl;}
+  auto end = std::chrono::high_resolution_clock::now();
+  std::cout << std::chrono::duration_cast<std::chrono::seconds>(end-begin).count() << "s" << std::endl;
   while (true) {}
   return 0;
 }
