@@ -3,10 +3,24 @@
 
 #include <vector>
 #include "cfield.h"
+#include <algorithm>
 
 using namespace std;
 
-int counter;
+int counter = 1;
+
+void ddraw(vector<vector<int>> field){
+  system("clear");
+  cout << "-------------------------" << endl;
+  for(int i = 0; i < 9; i++){
+    cout << "| ";
+    for(int a = 0; a < 9; a++){
+      cout << field[i][a] << " ";
+      if((a+1) % 3 == 0) cout << "| ";
+      if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << "-------------------------" << endl;};
+    }
+  }
+}
 
 bool isfieldfull(vector<vector<vector<int> > > pnumsoffield){
   for(int a = 0; a < 9; a++) {
@@ -104,28 +118,53 @@ vector<vector<vector<int> > > getpnumsoffield(vector<vector<int> > field){
         return pnumsoffield;
 }
 
+//only used for sort
+bool sortfor(vector<int> a, vector<int> b){return (a[2] < b[2]);}
+
+/**
+  @brief solves the field
+
+  @param field is the sudoku field
+
+  @returns the solved field
+*/
 vector<vector<int> > getsolvedfield(vector<vector<int> > field){
   vector<vector<vector<int> > > pnumsoffield;
   pnumsoffield = getpnumsoffield(field);
+  ddraw(field);
         vector<vector<int> > oldfield = field;
         counter++;
         cout << counter << endl;
-        int a,b;
         while(true) {
-                oldfield = field;
-                pnumsoffield = cleardoubles(pnumsoffield, field);
-                field = getnums(field, pnumsoffield);
-                if(isfieldfull(pnumsoffield)){break;}
-                if(checkfield(field)) {break;}
-                if(field == oldfield) {
-                  do{
-                    a = rand() % 9;
-                    b = rand() % 9;
-                  }while(field[a][b] != 0 && pnumsoffield[a][b].size() > 1);
-                  field[a][b] = rand() % 9;
+          oldfield = field;
+          pnumsoffield = cleardoubles(pnumsoffield, field);
+          field = getnums(field, pnumsoffield);
+          if(isfieldfull(pnumsoffield)){break;}
+          if(checkfield(field)) {break;}
+          if(field == oldfield) {
+            vector<vector<int>> posibleturns(81,{0,0,0});
+            int countforposibletruns = 0;
+            for(int a = 0; a < 9; a++){
+              for(int b = 0; b < 9; b++){
+                if(field[a][b] == 0 && pnumsoffield[a][b].size() > 1){
+                  posibleturns[countforposibletruns][0] = a;
+                  posibleturns[countforposibletruns][1] = b;
+                  posibleturns[countforposibletruns][2] = pnumsoffield[a][b].size();
+                  countforposibletruns++;
+                }
+              }
+            }
+            sort(posibleturns.begin(), posibleturns.end(), sortfor);
+            for(s:posibleturns){
+              if(s[2] > 0){
+                for(int i = 0; i < s[2]; i++){
+                  field[s[0]][s[1]] = pnumsoffield[s[0]][s[1]][i];
                   field = getsolvedfield(field);
-                  if(checkfield(field)){return field;}else{field[a][b] = 0;}
-                };
+                  if(checkfield(field)){return field;}else{field[s[0]][s[1]] = 0;}
+                }
+              }
+            }
+          };
         }
         return field;
 }
@@ -138,7 +177,6 @@ vector<vector<int> > getsolvedfield(vector<vector<int> > field){
    @returns the solved field
  */
 vector<vector<int> > solvefield(vector<vector<int> > field){
-        srand(time(NULL));
         vector<vector<int> > oldfield = field;
         while(true){
           field = getsolvedfield(oldfield);

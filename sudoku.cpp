@@ -31,7 +31,7 @@ int main(int argc, char const *argv[]) {
   draw(field);
   field = solvefield(field);
   draw(field);
-  if(checkfield(field)){cout << "SOLVED!" << endl;}
+  if(checkfield(field)){cout << "SOLVED!" << endl;}else{cout << "Not Solved" << endl;}
   auto end = std::chrono::high_resolution_clock::now();
   std::cout << std::chrono::duration_cast<std::chrono::seconds>(end-begin).count() << "s" << std::endl;
   while (true) {}
