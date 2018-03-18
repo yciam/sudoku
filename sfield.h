@@ -129,7 +129,7 @@ bool sortfor(vector<int> a, vector<int> b){return (a[2] < b[2]);}
   @returns the solved field
 */
 vector<vector<int> > getsolvedfield(vector<vector<int> > field){
-  vector<vector<vector<int> > > pnumsoffield;
+  vector<vector<vector<int> > > pnumsoffield; // here the possible number for the field are stored
   pnumsoffield = getpnumsoffield(field);
   ddraw(field);
         vector<vector<int> > oldfield = field;
@@ -154,7 +154,7 @@ vector<vector<int> > getsolvedfield(vector<vector<int> > field){
                 }
               }
             }
-            sort(posibleturns.begin(), posibleturns.end(), sortfor);
+            sort(posibleturns.begin(), posibleturns.end(), sortfor); // sorts so that the lowest number of fields are tryed first
             for(s:posibleturns){
               if(s[2] > 0){
                 for(int i = 0; i < s[2]; i++){
@@ -164,6 +164,7 @@ vector<vector<int> > getsolvedfield(vector<vector<int> > field){
                 }
               }
             }
+            break;
           };
         }
         return field;
