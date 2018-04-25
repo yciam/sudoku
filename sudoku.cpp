@@ -2,7 +2,7 @@
 #include <vector>
 #include "gfield.h"
 #include "cfield.h"
-#include "sfield.h"
+#include "osfield.h"
 #include <chrono>
 
 using namespace std;
@@ -17,7 +17,7 @@ void draw(vector<vector<int>> field){
   for(int i = 0; i < 9; i++){
     cout << "| ";
     for(int a = 0; a < 9; a++){
-      cout << field[i][a] << " ";
+      cout << (int)field[i][a] << " ";
       if((a+1) % 3 == 0) cout << "| ";
       if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << "-------------------------" << endl;};
     }
