@@ -1,3 +1,6 @@
+///@file osfield.h
+
+
 #ifndef OSFIELD_H
 #define OSFIELD_H
 
@@ -92,15 +95,14 @@ void* getsolvedfield(void* argument){
         vector<vector<int> > field = *((vector<vector<int> >*)argument);
         field = removeobvious(field);
         if(checkfield(field)){solvedfield = field; finished.notify_one(); pthread_exit(NULL);} //if solved this will end everything
-        vector<vector<int> > oldfield = field;
         for(int i = 0; i < 9; i++) { // go throught all fields
                 for(int a = 0; a < 9; a++) {
                         if(field[i][a] == 0) { // if a field equals 0 it has to be filled
                           vector<int> pos = getposibilities(field,i,a);
-                          for(p:pos){
-                            field = oldfield;
+                          for(int p:pos){
                             field[i][a] = p; // fill in all possibilities
                             getsolvedfield((void*)&field); //call the function again until it has solved it. unfortunately that does not work right now
+                            field[i][a] = 0;
                           }
                         }
                 }
