@@ -1,42 +1,30 @@
-///@file sudoku.cpp
-
-
 #include <iostream>
-#include <vector>
+#include <bitset>
+#include <array>
 #include "gfield.h"
-#include "cfield.h"
-#include "osfield.h"
-#include <chrono>
+#include "sfield.h"
 
 using namespace std;
 
-/**
-  @brief draws the field
-
-  @param field you play on
-*/
-void draw(vector<vector<int>> field){
-  cout << "-------------------------" << endl;
+void draw(array<array<bitset<9>,9>,9> field){
+  cout  << endl;
   for(int i = 0; i < 9; i++){
     cout << "| ";
     for(int a = 0; a < 9; a++){
-      cout << (int)field[i][a] << " ";
+      cout << field[i][a] << " ";
       if((a+1) % 3 == 0) cout << "| ";
-      if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << "-------------------------" << endl;};
+      if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << endl;};
     }
   }
 }
 
 int main(int argc, char const *argv[]) {
-  auto begin = std::chrono::high_resolution_clock::now();
-  vector<vector<int>> field ={{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0,},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};
-  field = generatefield(3, field);
+  array<array<bitset<9>,9>,9> field;
+  field = generatefield(field);
   draw(field);
-  field = solvefield(field);
+  if(field[1][1] == 010000000){cout << "t" << endl;}else{cout << field[1][1] << endl;}
+  //field = solvefield(field);
   draw(field);
-  if(checkfield(field)){cout << "SOLVED!" << endl;}else{cout << "Not Solved" << endl;}
-  auto end = std::chrono::high_resolution_clock::now();
-  std::cout << std::chrono::duration_cast<std::chrono::seconds>(end-begin).count() << "s" << std::endl;
-  while (true) {}
+  while(true){}
   return 0;
 }

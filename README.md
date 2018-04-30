@@ -1,2 +1,0 @@
-# sudoku
-This is Sudoku!
