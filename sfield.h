@@ -40,11 +40,40 @@ array<array<uint16_t,9>,9> removeobvious(array<array<uint16_t,9>,9> field){
   return field;
 }
 
+array<array<uint16_t,9>,9> removenotsoobvious(array<array<uint16_t,9>,9> field){
+  for(uint8_t i = 0; i < 9; i++){
+    for(uint8_t a = 0; a < 9; a++){
+      if(exactnumber(field[i][a]) == -1){
+        for(uint8_t b = 0; b < 9; b++){
+          if((field[i][a] >> b) & 1){
+            bool p1 = true, p2 = true, p3 = true;
+            for(uint8_t c = 0; c < 9; c++){
+              if((field[i][c] >> b) & 1) p1 = false;
+              if((field[c][a] >> b) & 1) p2 = false;
+            }
+            uint8_t s1, s2;
+            if(i < 3) {s1 = 0; }else if(i < 6) {s1 = 3; }else{s1 = 6; }
+            if(a < 3) {s2 = 0; }else if(a < 6) {s2 = 3; }else{s2 = 6; }
+            for(uint8_t c = 0; c < 3; c++) {
+                    for(uint8_t d = 0; d < 3; d++) {
+                          if((field[c+s1][d+s2] >> b) & 1) p3 = false;
+                    }
+            }
+            if(p1 || p2 || p3){field[i][a] = 0; field[i][a] |= 1 << b;}
+          }
+        }
+      }
+    }
+  }
+  return field;
+}
+
 array<array<uint16_t,9>,9> solvefield(array<array<uint16_t,9>,9> field){
   array<array<uint16_t,9>,9> oldfield;
   do{
     oldfield = field;
     field = removeobvious(field);
+    field = removenotsoobvious(field);
   }while(oldfield != field);
   return field;
 }
