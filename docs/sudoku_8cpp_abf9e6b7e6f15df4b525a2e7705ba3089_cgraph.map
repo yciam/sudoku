@@ -1,0 +1,8 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$gfield_8h.html#a1c8e3e39c5564e5172c568a74841a79f" title="generates a sudoku field " alt="" coords="104,5,200,32"/>
+<area shape="rect" id="node3" href="$sudoku_8cpp.html#a171d631494057de9f79174da15ee384b" title="drawexact" alt="" coords="111,56,193,83"/>
+<area shape="rect" id="node4" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="solvefield" alt="" coords="113,107,191,133"/>
+<area shape="rect" id="node5" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removeobvious" alt="" coords="264,81,375,108"/>
+<area shape="rect" id="node7" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removenotsoobvious" alt="" coords="248,132,391,159"/>
+<area shape="rect" id="node6" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="exactnumber" alt="" coords="439,107,536,133"/>
+</map>
