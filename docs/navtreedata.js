@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Sudoku", "index.html", [
+    [ "README", "md_README.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [

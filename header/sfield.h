@@ -31,7 +31,7 @@ int exactnumber(uint16_t fnum){
 array<array<uint16_t,9>,9> removeobvious(array<array<uint16_t,9>,9> field){
   for(uint8_t i = 0; i < 9; i++){
     for(uint8_t a = 0; a < 9; a++){
-      uint8_t num = exactnumber(field[i][a]);
+      int8_t num = exactnumber(field[i][a]);
       if(num != -1){
         for(uint8_t b = 0; b < 9; b++){
           field[i][b] &= ~(1 << num);
