@@ -7,7 +7,6 @@
 
 using namespace std;
 
-map<int, int> intmap;
 
 
 /**
@@ -16,6 +15,8 @@ map<int, int> intmap;
   @param field is your Sudoku Field
 */
 void draw(array<array<uint16_t,9>,9> field){
+  map<int, int> intmap;
+  intmap[1] = 1;intmap[2] = 2;intmap[4] = 3;intmap[8] = 4;intmap[16] = 5;intmap[32] = 6;intmap[64] = 7;intmap[128] = 8;intmap[256] = 9;
   cout  << endl;
   for(int i = 0; i < 9; i++){
     cout << "| ";
@@ -29,9 +30,8 @@ void draw(array<array<uint16_t,9>,9> field){
 
 int main(int argc, char const *argv[]) {
   auto begin = std::chrono::high_resolution_clock::now();
-  intmap[1] = 1;intmap[2] = 2;intmap[4] = 3;intmap[8] = 4;intmap[16] = 5;intmap[32] = 6;intmap[64] = 7;intmap[128] = 8;intmap[256] = 9;
   array<array<uint16_t,9>,9> field;
-  field = generatefield();
+  field = generatefield(20);
   draw(field);
   field = solvefield(field);
   draw(field);
