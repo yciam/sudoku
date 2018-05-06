@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Sudoku: gfield.h File Reference</title>
+<title>Sudoku: header/gfield.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -112,21 +112,20 @@ $(document).ready(function(){initNavTree('gfield_8h.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;bitset&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for gfield.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="gfield_8h__incl.png" border="0" usemap="#gfield_8h" alt=""/></div>
-<map name="gfield_8h" id="gfield_8h">
+<div class="center"><img src="gfield_8h__incl.png" border="0" usemap="#header_2gfield_8h" alt=""/></div>
+<map name="header_2gfield_8h" id="header_2gfield_8h">
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="gfield_8h__dep__incl.png" border="0" usemap="#gfield_8hdep" alt=""/></div>
-<map name="gfield_8hdep" id="gfield_8hdep">
-<area shape="rect" id="node2" href="sudoku_8cpp.html" title="sudoku.cpp" alt="" coords="5,80,95,107"/>
+<div class="center"><img src="gfield_8h__dep__incl.png" border="0" usemap="#header_2gfield_8hdep" alt=""/></div>
+<map name="header_2gfield_8hdep" id="header_2gfield_8hdep">
+<area shape="rect" id="node2" href="sudoku_8cpp.html" title="sudoku.cpp" alt="" coords="14,80,103,107"/>
 </map>
 </div>
 </div>
@@ -134,42 +133,34 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1c8e3e39c5564e5172c568a74841a79f"><td class="memItemLeft" align="right" valign="top">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfield_8h.html#a1c8e3e39c5564e5172c568a74841a79f">generatefield</a> (array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; bfield)</td></tr>
-<tr class="memdesc:a1c8e3e39c5564e5172c568a74841a79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates a sudoku field  <a href="#a1c8e3e39c5564e5172c568a74841a79f">More...</a><br /></td></tr>
-<tr class="separator:a1c8e3e39c5564e5172c568a74841a79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c6c841b04cfb050e1406b3cdeedbce9"><td class="memItemLeft" align="right" valign="top">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfield_8h.html#a1c6c841b04cfb050e1406b3cdeedbce9">generatefield</a> ()</td></tr>
+<tr class="memdesc:a1c6c841b04cfb050e1406b3cdeedbce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">generates a sudoku field  <a href="#a1c6c841b04cfb050e1406b3cdeedbce9">More...</a><br /></td></tr>
+<tr class="separator:a1c6c841b04cfb050e1406b3cdeedbce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a1c8e3e39c5564e5172c568a74841a79f"></a>
+<a class="anchor" id="a1c6c841b04cfb050e1406b3cdeedbce9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">array&lt;array&lt;uint16_t,9&gt;,9&gt; generatefield </td>
           <td>(</td>
-          <td class="paramtype">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt;&#160;</td>
-          <td class="paramname"><em>bfield</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>generates a sudoku field </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">numberofmissings</td><td>number of fields getting ereased </td></tr>
-    <tr><td class="paramname">field</td><td>the field to generate a sudoku field on</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>the sudoku field </dd></dl>
 
-<p>Definition at line <a class="el" href="gfield_8h_source.html#l00018">18</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                                                           {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  vector&lt;vector&lt;int&gt;&gt; field;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="comment">//field = {{0,0,0,2,1,7,9,8,4},{9,8,1,3,4,6,7,5,2},{2,4,7,9,8,5,1,3,6},{7,1,8,5,6,9,2,4,3},{4,9,6,1,2,3,5,7,8},{3,2,5,4,7,8,6,9,1},{1,3,4,7,5,2,8,6,9},{6,7,9,8,3,1,4,2,5},{8,5,2,6,9,4,3,1,7}};</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//field = {{0,0,4,9,0,6,3,0,0},{1,0,0,0,5,0,0,0,9},{0,8,0,2,0,7,0,5,0},{0,0,2,0,3,0,8,0,0},{8,3,0,0,0,0,0,6,2},{0,0,7,0,8,0,1,0,0},{0,9,0,4,0,1,0,2,0},{6,0,0,0,9,0,0,0,8},{0,0,1,8,0,3,7,0,0}};</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="comment">//field = {{0,1,0,9,0,0,8,0,0},{0,0,0,0,0,8,0,0,4},{6,0,5,0,0,0,7,0,0},{0,9,0,0,6,0,0,0,8},{0,0,0,2,0,7,0,0,0},{8,0,0,0,3,0,0,6,0},{0,0,2,0,0,0,5,0,3},{1,0,0,4,0,0,0,0,0},{0,0,6,0,0,2,0,1,0}};</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  field = {{0,0,0,0,0,0,0,1,0},{4,0,0,0,0,0,0,0,0},{0,2,0,0,0,0,0,0,0},{0,0,0,0,5,0,4,0,7},{0,0,8,0,0,0,3,0,0},{0,0,1,0,9,0,0,0,0},{3,0,0,4,0,0,2,0,0},{0,5,0,1,0,0,0,0,0},{0,0,0,8,0,6,0,0,0}};</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="comment">//field = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++){</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordflow">if</span>(field[i][a] != 0){</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        bfield[i][a] = 0;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        bfield[i][a] |= 1 &lt;&lt; field[i][a]-1;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        bfield[i][a] = 511;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      }</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">return</span> bfield;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="gfield_8h_source.html#l00014">14</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                          {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  array&lt;array&lt;uint16_t,9&gt;,9&gt; bfield;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  vector&lt;vector&lt;int&gt;&gt; field;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="comment">//field = {{0,0,0,2,1,7,9,8,4},{9,8,1,3,4,6,7,5,2},{2,4,7,9,8,5,1,3,6},{7,1,8,5,6,9,2,4,3},{4,9,6,1,2,3,5,7,8},{3,2,5,4,7,8,6,9,1},{1,3,4,7,5,2,8,6,9},{6,7,9,8,3,1,4,2,5},{8,5,2,6,9,4,3,1,7}};</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="comment">//field = {{0,0,4,9,0,6,3,0,0},{1,0,0,0,5,0,0,0,9},{0,8,0,2,0,7,0,5,0},{0,0,2,0,3,0,8,0,0},{8,3,0,0,0,0,0,6,2},{0,0,7,0,8,0,1,0,0},{0,9,0,4,0,1,0,2,0},{6,0,0,0,9,0,0,0,8},{0,0,1,8,0,3,7,0,0}};</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="comment">//field = {{0,1,0,9,0,0,8,0,0},{0,0,0,0,0,8,0,0,4},{6,0,5,0,0,0,7,0,0},{0,9,0,0,6,0,0,0,8},{0,0,0,2,0,7,0,0,0},{8,0,0,0,3,0,0,6,0},{0,0,2,0,0,0,5,0,3},{1,0,0,4,0,0,0,0,0},{0,0,6,0,0,2,0,1,0}};</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  field = {{0,0,0,0,0,0,0,1,0},{4,0,0,0,0,0,0,0,0},{0,2,0,0,0,0,0,0,0},{0,0,0,0,5,0,4,0,7},{0,0,8,0,0,0,3,0,0},{0,0,1,0,9,0,0,0,0},{3,0,0,4,0,0,2,0,0},{0,5,0,1,0,0,0,0,0},{0,0,0,8,0,6,0,0,0}};</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="comment">//field = {{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0},{0,0,0,0,0,0,0,0,0}};</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++){</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">if</span>(field[i][a] != 0){</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        bfield[i][a] = 0;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        bfield[i][a] |= 1 &lt;&lt; field[i][a]-1;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      }<span class="keywordflow">else</span>{</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        bfield[i][a] = 511;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      }</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordflow">return</span> bfield;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div></div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="gfield_8h_a1c8e3e39c5564e5172c568a74841a79f_icgraph.png" border="0" usemap="#gfield_8h_a1c8e3e39c5564e5172c568a74841a79f_icgraph" alt=""/></div>
-<map name="gfield_8h_a1c8e3e39c5564e5172c568a74841a79f_icgraph" id="gfield_8h_a1c8e3e39c5564e5172c568a74841a79f_icgraph">
+<div class="center"><img src="gfield_8h_a1c6c841b04cfb050e1406b3cdeedbce9_icgraph.png" border="0" usemap="#gfield_8h_a1c6c841b04cfb050e1406b3cdeedbce9_icgraph" alt=""/></div>
+<map name="gfield_8h_a1c6c841b04cfb050e1406b3cdeedbce9_icgraph" id="gfield_8h_a1c6c841b04cfb050e1406b3cdeedbce9_icgraph">
 <area shape="rect" id="node2" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="149,5,200,32"/>
 </map>
 </div>
@@ -183,10 +174,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="gfield_8h.html">gfield.h</a></li>
-    <li class="footer">Generated on Sun May 6 2018 12:01:05 for Sudoku by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
+    <li class="navelem"><a class="el" href="dir_1ec98ce50fa6ec55b40b8ffb1df38c3c.html">header</a></li><li class="navelem"><a class="el" href="gfield_8h.html">gfield.h</a></li>
   </ul>
 </div>
 </body>

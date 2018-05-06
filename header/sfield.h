@@ -2,11 +2,16 @@
 #define SFIELD_H
 
 #include <array>
-#include <bitset>
-#include <iostream>
 
 using namespace std;
 
+/**
+  @brief used to get the exact number of a field if there is only one possibility
+
+  @param fnum is the number you wanna check
+
+  @returns the number of a field if there is only one possibility
+*/
 int exactnumber(uint16_t fnum){
   for(uint8_t i = 0; i < 9; i++){
     uint16_t num = 0;
@@ -16,6 +21,13 @@ int exactnumber(uint16_t fnum){
   return -1;
 }
 
+/**
+  @brief removes the already used fields from the other possibilitys of the fields
+
+  @param field is the sudoku field you wanna solve
+
+  @returns the better field
+*/
 array<array<uint16_t,9>,9> removeobvious(array<array<uint16_t,9>,9> field){
   for(uint8_t i = 0; i < 9; i++){
     for(uint8_t a = 0; a < 9; a++){
@@ -40,6 +52,13 @@ array<array<uint16_t,9>,9> removeobvious(array<array<uint16_t,9>,9> field){
   return field;
 }
 
+/**
+  @brief removes the other possibilitys if one of the possibilitys is the only option
+
+  @param field is the sudoku field you wanna solve
+
+  @returns the better field
+*/
 array<array<uint16_t,9>,9> removenotsoobvious(array<array<uint16_t,9>,9> field){
   for(uint8_t i = 0; i < 9; i++){
     for(uint8_t a = 0; a < 9; a++){
@@ -69,6 +88,13 @@ array<array<uint16_t,9>,9> removenotsoobvious(array<array<uint16_t,9>,9> field){
   return field;
 }
 
+/**
+  @brief calls removeobvious and removenotsoobvious until the sudoku is solved
+
+  @param field is the sudoku field you wanna solve
+
+  @returns the solved field
+*/
 array<array<uint16_t,9>,9> solvefield(array<array<uint16_t,9>,9> field){
   array<array<uint16_t,9>,9> oldfield;
   do{

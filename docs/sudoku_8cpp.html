@@ -114,9 +114,8 @@ $(document).ready(function(){initNavTree('sudoku_8cpp.html','');});
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
-<code>#include &lt;bitset&gt;</code><br />
-<code>#include &quot;<a class="el" href="gfield_8h_source.html">gfield.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="sfield_8h_source.html">sfield.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gfield_8h_source.html">header/gfield.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sfield_8h_source.html">header/sfield.h</a>&quot;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -124,8 +123,8 @@ Include dependency graph for sudoku.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="sudoku_8cpp__incl.png" border="0" usemap="#sudoku_8cpp" alt=""/></div>
 <map name="sudoku_8cpp" id="sudoku_8cpp">
-<area shape="rect" id="node5" href="gfield_8h.html" title="gfield.h" alt="" coords="200,80,264,107"/>
-<area shape="rect" id="node7" href="sfield_8h.html" title="sfield.h" alt="" coords="112,80,176,107"/>
+<area shape="rect" id="node4" href="gfield_8h.html" title="header/gfield.h" alt="" coords="283,80,389,107"/>
+<area shape="rect" id="node6" href="sfield_8h.html" title="header/sfield.h" alt="" coords="152,80,259,107"/>
 </map>
 </div>
 </div>
@@ -133,9 +132,8 @@ Include dependency graph for sudoku.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a171d631494057de9f79174da15ee384b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8cpp.html#a171d631494057de9f79174da15ee384b">drawexact</a> (array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</td></tr>
-<tr class="separator:a171d631494057de9f79174da15ee384b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d1b1d9c2576a358de163b7c1c439377"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377">draw</a> (array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</td></tr>
+<tr class="memdesc:a4d1b1d9c2576a358de163b7c1c439377"><td class="mdescLeft">&#160;</td><td class="mdescRight">draws the Sudoku field  <a href="#a4d1b1d9c2576a358de163b7c1c439377">More...</a><br /></td></tr>
 <tr class="separator:a4d1b1d9c2576a358de163b7c1c439377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089">main</a> (int argc, char const *argv[])</td></tr>
 <tr class="separator:abf9e6b7e6f15df4b525a2e7705ba3089"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,33 +158,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00025">25</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                           {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  cout  &lt;&lt; endl;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++){</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      cout &lt;&lt; bitset&lt;16&gt;(field[i][a]) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordflow">if</span>((a+1) % 3 == 0) cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordflow">if</span>(a == 8) {cout &lt;&lt; endl; <span class="keywordflow">if</span>((i+1) % 3 == 0) cout &lt;&lt; endl;};</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div></div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a171d631494057de9f79174da15ee384b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void drawexact </td>
-          <td>(</td>
-          <td class="paramtype">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt;&#160;</td>
-          <td class="paramname"><em>field</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>draws the Sudoku field </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>is your Sudoku Field </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00013">13</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                {</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  cout  &lt;&lt; endl;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++){</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      cout &lt;&lt; <a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[(int)field[i][a]] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordflow">if</span>((a+1) % 3 == 0) cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordflow">if</span>(a == 8) {cout &lt;&lt; endl; <span class="keywordflow">if</span>((i+1) % 3 == 0) cout &lt;&lt; endl;};</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  }</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div><div class="ttc" id="sudoku_8cpp_html_a136082e7825e75069526d0713e2bded5"><div class="ttname"><a href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a></div><div class="ttdeci">map&lt; int, int &gt; intmap</div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00011">sudoku.cpp:11</a></div></div>
+<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00018">18</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                           {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  cout  &lt;&lt; endl;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++){</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++){</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      cout &lt;&lt; <a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[(int)field[i][a]] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordflow">if</span>((a+1) % 3 == 0) cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordflow">if</span>(a == 8) {cout &lt;&lt; endl; <span class="keywordflow">if</span>((i+1) % 3 == 0) cout &lt;&lt; endl;};</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div><div class="ttc" id="sudoku_8cpp_html_a136082e7825e75069526d0713e2bded5"><div class="ttname"><a href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a></div><div class="ttdeci">map&lt; int, int &gt; intmap</div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00010">sudoku.cpp:10</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="sudoku_8cpp_a171d631494057de9f79174da15ee384b_icgraph.png" border="0" usemap="#sudoku_8cpp_a171d631494057de9f79174da15ee384b_icgraph" alt=""/></div>
-<map name="sudoku_8cpp_a171d631494057de9f79174da15ee384b_icgraph" id="sudoku_8cpp_a171d631494057de9f79174da15ee384b_icgraph">
-<area shape="rect" id="node2" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="136,5,187,32"/>
+<div class="center"><img src="sudoku_8cpp_a4d1b1d9c2576a358de163b7c1c439377_icgraph.png" border="0" usemap="#sudoku_8cpp_a4d1b1d9c2576a358de163b7c1c439377_icgraph" alt=""/></div>
+<map name="sudoku_8cpp_a4d1b1d9c2576a358de163b7c1c439377_icgraph" id="sudoku_8cpp_a4d1b1d9c2576a358de163b7c1c439377_icgraph">
+<area shape="rect" id="node2" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="104,5,155,32"/>
 </map>
 </div>
 </p>
@@ -217,23 +205,23 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00037">37</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                       {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">auto</span> begin = std::chrono::high_resolution_clock::now();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[1] = 1;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[2] = 2;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[4] = 3;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[8] = 4;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[16] = 5;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[32] = 6;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[64] = 7;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[128] = 8;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[256] = 9;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  array&lt;array&lt;uint16_t,9&gt;,9&gt; field;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  field = <a class="code" href="gfield_8h.html#a1c8e3e39c5564e5172c568a74841a79f">generatefield</a>(field);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="sudoku_8cpp.html#a171d631494057de9f79174da15ee384b">drawexact</a>(field);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">//draw(field);</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  field = <a class="code" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a>(field);</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">//draw(field);</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="sudoku_8cpp.html#a171d631494057de9f79174da15ee384b">drawexact</a>(field);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  std::cout &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end-begin).count() &lt;&lt; <span class="stringliteral">&quot; microseconds&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordflow">while</span>(<span class="keyword">true</span>){}</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div><div class="ttc" id="sudoku_8cpp_html_a136082e7825e75069526d0713e2bded5"><div class="ttname"><a href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a></div><div class="ttdeci">map&lt; int, int &gt; intmap</div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00011">sudoku.cpp:11</a></div></div>
-<div class="ttc" id="sfield_8h_html_ad3462e114b4823a2e44228b92065f146"><div class="ttname"><a href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; solvefield(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdef"><b>Definition:</b> <a href="sfield_8h_source.html#l00072">sfield.h:72</a></div></div>
-<div class="ttc" id="gfield_8h_html_a1c8e3e39c5564e5172c568a74841a79f"><div class="ttname"><a href="gfield_8h.html#a1c8e3e39c5564e5172c568a74841a79f">generatefield</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; generatefield(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; bfield)</div><div class="ttdoc">generates a sudoku field </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00018">gfield.h:18</a></div></div>
-<div class="ttc" id="sudoku_8cpp_html_a171d631494057de9f79174da15ee384b"><div class="ttname"><a href="sudoku_8cpp.html#a171d631494057de9f79174da15ee384b">drawexact</a></div><div class="ttdeci">void drawexact(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00013">sudoku.cpp:13</a></div></div>
+<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00030">30</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                       {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">auto</span> begin = std::chrono::high_resolution_clock::now();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[1] = 1;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[2] = 2;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[4] = 3;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[8] = 4;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[16] = 5;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[32] = 6;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[64] = 7;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[128] = 8;<a class="code" href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a>[256] = 9;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  array&lt;array&lt;uint16_t,9&gt;,9&gt; field;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  field = <a class="code" href="gfield_8h.html#a1c6c841b04cfb050e1406b3cdeedbce9">generatefield</a>();</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377">draw</a>(field);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  field = <a class="code" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a>(field);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377">draw</a>(field);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">auto</span> end = std::chrono::high_resolution_clock::now();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  std::cout &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end-begin).count() &lt;&lt; <span class="stringliteral">&quot; microseconds&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordflow">while</span>(<span class="keyword">true</span>){}</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="ttc" id="sudoku_8cpp_html_a4d1b1d9c2576a358de163b7c1c439377"><div class="ttname"><a href="sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377">draw</a></div><div class="ttdeci">void draw(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">draws the Sudoku field </div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00018">sudoku.cpp:18</a></div></div>
+<div class="ttc" id="sudoku_8cpp_html_a136082e7825e75069526d0713e2bded5"><div class="ttname"><a href="sudoku_8cpp.html#a136082e7825e75069526d0713e2bded5">intmap</a></div><div class="ttdeci">map&lt; int, int &gt; intmap</div><div class="ttdef"><b>Definition:</b> <a href="sudoku_8cpp_source.html#l00010">sudoku.cpp:10</a></div></div>
+<div class="ttc" id="sfield_8h_html_ad3462e114b4823a2e44228b92065f146"><div class="ttname"><a href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; solvefield(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">calls removeobvious and removenotsoobvious until the sudoku is solved </div><div class="ttdef"><b>Definition:</b> <a href="sfield_8h_source.html#l00098">sfield.h:98</a></div></div>
+<div class="ttc" id="gfield_8h_html_a1c6c841b04cfb050e1406b3cdeedbce9"><div class="ttname"><a href="gfield_8h.html#a1c6c841b04cfb050e1406b3cdeedbce9">generatefield</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; generatefield()</div><div class="ttdoc">generates a sudoku field </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00014">gfield.h:14</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="sudoku_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph.png" border="0" usemap="#sudoku_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph" alt=""/></div>
 <map name="sudoku_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph" id="sudoku_8cpp_abf9e6b7e6f15df4b525a2e7705ba3089_cgraph">
-<area shape="rect" id="node2" href="gfield_8h.html#a1c8e3e39c5564e5172c568a74841a79f" title="generates a sudoku field " alt="" coords="104,5,200,32"/>
-<area shape="rect" id="node3" href="sudoku_8cpp.html#a171d631494057de9f79174da15ee384b" title="drawexact" alt="" coords="111,56,193,83"/>
-<area shape="rect" id="node4" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="solvefield" alt="" coords="113,107,191,133"/>
-<area shape="rect" id="node5" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removeobvious" alt="" coords="264,81,375,108"/>
-<area shape="rect" id="node7" href="sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removenotsoobvious" alt="" coords="248,132,391,159"/>
-<area shape="rect" id="node6" href="sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="exactnumber" alt="" coords="439,107,536,133"/>
+<area shape="rect" id="node2" href="gfield_8h.html#a1c6c841b04cfb050e1406b3cdeedbce9" title="generates a sudoku field " alt="" coords="104,5,200,32"/>
+<area shape="rect" id="node3" href="sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377" title="draws the Sudoku field " alt="" coords="127,56,177,83"/>
+<area shape="rect" id="node4" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="113,107,191,133"/>
+<area shape="rect" id="node5" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="264,81,375,108"/>
+<area shape="rect" id="node7" href="sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="248,132,391,159"/>
+<area shape="rect" id="node6" href="sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="439,107,536,133"/>
 </map>
 </div>
 </p>
@@ -251,7 +239,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00011">11</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
+<p>Definition at line <a class="el" href="sudoku_8cpp_source.html#l00010">10</a> of file <a class="el" href="sudoku_8cpp_source.html">sudoku.cpp</a>.</p>
 
 </div>
 </div>
@@ -262,9 +250,6 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="sudoku_8cpp.html">sudoku.cpp</a></li>
-    <li class="footer">Generated on Sun May 6 2018 12:01:05 for Sudoku by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
 </div>
 </body>

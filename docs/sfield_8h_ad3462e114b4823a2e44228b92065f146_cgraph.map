@@ -1,5 +1,5 @@
 <map id="solvefield" name="solvefield">
-<area shape="rect" id="node2" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removeobvious" alt="" coords="147,5,257,32"/>
-<area shape="rect" id="node4" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removenotsoobvious" alt="" coords="131,56,273,83"/>
-<area shape="rect" id="node3" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="exactnumber" alt="" coords="321,31,419,57"/>
+<area shape="rect" id="node2" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="147,5,257,32"/>
+<area shape="rect" id="node4" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="131,56,273,83"/>
+<area shape="rect" id="node3" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="321,31,419,57"/>
 </map>
