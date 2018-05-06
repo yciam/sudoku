@@ -27,21 +27,6 @@ void ddraw(array<array<uint16_t,9>,9> field){
   }
 }
 
-bool findthemistake(array<array<uint16_t,9>,9> field){
-  for(uint i = 0; i < 9; i++){
-    list<uint16_t> l(0); uint end = 0;
-    l.clear();
-    for(uint a = 0; a < 9; a++){
-      if(field[i][a] == 0){break;}
-      l.push_back(field[i][a]);
-      end++;
-    }
-    l.unique();
-    if(l.size() != end){cout << l.size() << " f " << end << endl; return false;}else{for(s:l){cout << s;} cout << endl << l.size() << " " << end << endl;}
-  }
-  return true;
-}
-
 /**
   @brief generates a sudoku field
 
@@ -63,7 +48,7 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
         ddraw(field);
         while(true){
           uint16_t z = rand() % 9;
-          if(((field[i][a] >> z) & 1)){field[i][a] = 0; field[i][a] |= 1 << z; break;}
+          if(((field[i][a] >> z) & 1)){field[i][a] = 1 << z; break;}
         }
       }
     }
