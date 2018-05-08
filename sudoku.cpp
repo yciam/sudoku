@@ -5,6 +5,8 @@
 #include <map>
 #include <chrono>
 
+#define DIFFICULTY 20
+
 using namespace std;
 
 
@@ -31,7 +33,7 @@ void draw(array<array<uint16_t,9>,9> field){
 int main(int argc, char const *argv[]) {
   auto begin = std::chrono::high_resolution_clock::now();
   array<array<uint16_t,9>,9> field;
-  field = generatefield(20);
+  field = generatefield(DIFFICULTY);
   draw(field);
   field = solvefield(field);
   draw(field);
