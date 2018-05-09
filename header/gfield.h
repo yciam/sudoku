@@ -13,6 +13,29 @@
 
 using namespace std;
 
+uint8_t positionof(uint8_t position, uint16_t number){
+  uint8_t NumberOfHighBits = 0;
+  for(int i = 0;; i++){
+    if(((number >> i) & 1)){
+      NumberOfHighBits++;
+      if(position == NumberOfHighBits) return i;
+    }
+  }
+}
+
+/**
+  @brief will return the number of high bits
+
+  @param i is obvious
+
+  @returns the number of High Bits
+*/
+int countHighBits(int i) {
+     i = i - ((i >> 1) & 0x55555555);
+     i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+     return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
+}
+
 /**
    @brief will check if there are any Zeros in your field
 
@@ -55,12 +78,7 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                 for(int i = 0; i < 9; i++) {
                         for(int a = 0; a < 9; a++) {
                                 field = removeobvious(field);
-                                if(field[i][a] != 0) {
-                                        vector<uint16_t> pn;
-                                        for(int o = 0; o < 9; o++) {if(((field[i][a] >> o) & 1)) {pn.push_back(o); }}
-                                        uint16_t z = rand() % pn.size();
-                                        if(((field[i][a] >> pn[z]) & 1)) {field[i][a] = 1 << pn[z]; }
-                                }
+                                if(field[i][a] != 0) field[i][a] = 1 << positionof(rand() % countHighBits(field[i][a]), field[i][a]);
                         }
                 }
 
