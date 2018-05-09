@@ -60,7 +60,8 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
 
                 array<array<uint16_t,9>,9> oldfield = field;
                 for(int i = 0; i < difficulty; i++) {
-                        field[rand() % 9][rand() % 9] = 511;
+                  int a = rand() % 9, b = rand() % 9;
+                        if(field[a][b] != 511){field[a][b] = 511;}else{i--;}
                 }
                 if(oldfield == solvefield(field)) {return field; }
         }
