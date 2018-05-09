@@ -59,10 +59,8 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                                         if(field[i][a] != 0){
                                           vector<uint16_t> pn;
                                           for(int o = 0; o < 9; o++){if(((field[i][a] >> o) & 1)){pn.push_back(o);}}
-                                          for(;;) {
                                             uint16_t z = rand() % pn.size();
-                                            if(((field[i][a] >> pn[z]) & 1)) {field[i][a] = 1 << pn[z]; break; }
-                                          }
+                                            if(((field[i][a] >> pn[z]) & 1)) {field[i][a] = 1 << pn[z];}
                                         }
                                 }
                         }
