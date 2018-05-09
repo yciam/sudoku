@@ -13,6 +13,14 @@
 
 using namespace std;
 
+/**
+  @brief returns the posithion of the nth high bit
+
+  @param position is the position of the High bit you want if you only count High Bits
+  @param number is the number you wanna Analyse
+
+  @returns the postion of the nth High Bit
+*/
 uint8_t positionof(uint8_t position, uint16_t number){
   uint8_t NumberOfHighBits = 0;
   for(int i = 0;; i++){
@@ -60,13 +68,12 @@ bool nozero(array<array<uint16_t,9>,9> field){
    @returns the sudoku field
  */
 array<array<uint16_t,9>,9> generatefield(int difficulty){
-        if(difficulty > 52) { //64 should be the limit, but sadly it takes to long
+        if(difficulty > 55) { //64 should be the limit, but sadly it takes to long
                 cout << "difficulty to high" << endl;
                 while(true) {}
         }
 
         array<array<uint16_t,9>,9> field;
-        srand(time(NULL));
         for(;; ) {
 
                 for(int i = 0; i < 9; i++) {

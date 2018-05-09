@@ -1,9 +1,11 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="104,20,200,47"/>
-<area shape="rect" id="node6" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="248,71,325,98"/>
-<area shape="rect" id="node8" href="$sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377" title="draws the Sudoku field " alt="" coords="127,122,177,148"/>
-<area shape="rect" id="node3" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="389,20,500,47"/>
-<area shape="rect" id="node5" href="$gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7" title="will check if there are any Zeros in your field " alt="" coords="256,20,317,47"/>
-<area shape="rect" id="node4" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="564,46,661,72"/>
-<area shape="rect" id="node7" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="373,71,516,98"/>
+<area shape="rect" id="node2" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="104,107,200,134"/>
+<area shape="rect" id="node8" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="261,183,339,210"/>
+<area shape="rect" id="node10" href="$sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377" title="draws the Sudoku field " alt="" coords="127,220,177,247"/>
+<area shape="rect" id="node3" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="416,132,527,159"/>
+<area shape="rect" id="node5" href="$gfield_8h.html#a3fa6a08a98b9f77bd86582b4773ccd25" title="returns the posithion of the nth high bit " alt="" coords="261,31,339,58"/>
+<area shape="rect" id="node6" href="$gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35" title="will return the number of high bits " alt="" coords="248,82,352,108"/>
+<area shape="rect" id="node7" href="$gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7" title="will check if there are any Zeros in your field " alt="" coords="269,132,331,159"/>
+<area shape="rect" id="node4" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="591,158,688,184"/>
+<area shape="rect" id="node9" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="400,183,543,210"/>
 </map>

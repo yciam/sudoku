@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['draw',['draw',['../sudoku_8cpp.html#a4d1b1d9c2576a358de163b7c1c439377',1,'sudoku.cpp']]]
+  ['counthighbits',['countHighBits',['../gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35',1,'gfield.h']]]
 ];

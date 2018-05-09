@@ -141,6 +141,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3fa6a08a98b9f77bd86582b4773ccd25"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfield_8h.html#a3fa6a08a98b9f77bd86582b4773ccd25">positionof</a> (uint8_t position, uint16_t number)</td></tr>
+<tr class="memdesc:a3fa6a08a98b9f77bd86582b4773ccd25"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the posithion of the nth high bit  <a href="#a3fa6a08a98b9f77bd86582b4773ccd25">More...</a><br /></td></tr>
+<tr class="separator:a3fa6a08a98b9f77bd86582b4773ccd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db4bbb2a14755e00000af4c42317b35"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35">countHighBits</a> (int i)</td></tr>
+<tr class="memdesc:a9db4bbb2a14755e00000af4c42317b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">will return the number of high bits  <a href="#a9db4bbb2a14755e00000af4c42317b35">More...</a><br /></td></tr>
+<tr class="separator:a9db4bbb2a14755e00000af4c42317b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1ff61c40b9bab8ebe99921f532161e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7">nozero</a> (array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</td></tr>
 <tr class="memdesc:ac1ff61c40b9bab8ebe99921f532161e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">will check if there are any Zeros in your field  <a href="#ac1ff61c40b9bab8ebe99921f532161e7">More...</a><br /></td></tr>
 <tr class="separator:ac1ff61c40b9bab8ebe99921f532161e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +155,44 @@ Functions</h2></td></tr>
 <tr class="separator:a51fc24fe0e97351f526d7185a51f161d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a9db4bbb2a14755e00000af4c42317b35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int countHighBits </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>will return the number of high bits </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>is obvious</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the number of High Bits </dd></dl>
+
+<p>Definition at line <a class="el" href="gfield_8h_source.html#l00041">41</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                         {</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;     i = i - ((i &gt;&gt; 1) &amp; 0x55555555);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;     i = (i &amp; 0x33333333) + ((i &gt;&gt; 2) &amp; 0x33333333);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;     <span class="keywordflow">return</span> (((i + (i &gt;&gt; 4)) &amp; 0x0F0F0F0F) * 0x01010101) &gt;&gt; 24;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div></div><!-- fragment -->
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gfield_8h_a9db4bbb2a14755e00000af4c42317b35_icgraph.png" border="0" usemap="#gfield_8h_a9db4bbb2a14755e00000af4c42317b35_icgraph" alt=""/></div>
+<map name="gfield_8h_a9db4bbb2a14755e00000af4c42317b35_icgraph" id="gfield_8h_a9db4bbb2a14755e00000af4c42317b35_icgraph">
+<area shape="rect" id="node2" href="gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="157,5,253,32"/>
+<area shape="rect" id="node3" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="301,5,352,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a51fc24fe0e97351f526d7185a51f161d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -172,21 +216,25 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the sudoku field </dd></dl>
 
-<p>Definition at line <a class="el" href="gfield_8h_source.html#l00039">39</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                        {</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span>(difficulty &gt; 52) { <span class="comment">//64 should be the limit, but sadly it takes to long</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;difficulty to high&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">while</span>(<span class="keyword">true</span>) {}</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        array&lt;array&lt;uint16_t,9&gt;,9&gt; field;</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        srand(time(NULL));</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span>(;; ) {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">for</span>(;; ) {</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                        field[i][a] = 511;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                        }</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                        field = <a class="code" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924">removeobvious</a>(field);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                        <span class="keywordflow">for</span>(;;) {</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                                uint16_t z = rand() % 9;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                                                <span class="keywordflow">if</span>(((field[i][a] &gt;&gt; z) &amp; 1)) {field[i][a] = 1 &lt;&lt; z; <span class="keywordflow">break</span>; }</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                                <span class="keywordflow">if</span>(field[i][a] == 0){<span class="keywordflow">break</span>;}</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                        }</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                }</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        }</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        <span class="keywordflow">if</span>(<a class="code" href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7">nozero</a>(field)) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                array&lt;array&lt;uint16_t,9&gt;,9&gt; oldfield = field;</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; difficulty; i++) {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                  <span class="keywordtype">int</span> a = rand() % 9, b = rand() % 9;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                        <span class="keywordflow">if</span>(field[a][b] != 511){field[a][b] = 511;}<span class="keywordflow">else</span>{i--;}</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span>(oldfield == <a class="code" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a>(field)) {<span class="keywordflow">return</span> field; }</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div><div class="ttc" id="sfield_8h_html_a5635fc62a1602672c95f71075f2b6924"><div class="ttname"><a href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924">removeobvious</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; removeobvious(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">removes the already used fields from the other possibilitys of the fields </div><div class="ttdef"><b>Definition:</b> <a href="sfield_8h_source.html#l00033">sfield.h:33</a></div></div>
+<p>Definition at line <a class="el" href="gfield_8h_source.html#l00070">70</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                        {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(difficulty &gt; 55) { <span class="comment">//64 should be the limit, but sadly it takes to long</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                cout &lt;&lt; <span class="stringliteral">&quot;difficulty to high&quot;</span> &lt;&lt; endl;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">while</span>(<span class="keyword">true</span>) {}</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        array&lt;array&lt;uint16_t,9&gt;,9&gt; field;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span>(;; ) {</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                                field[i][a] = 511;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        }</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                }</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                field = <a class="code" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924">removeobvious</a>(field);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                <span class="keywordflow">if</span>(field[i][a] != 0) field[i][a] = 1 &lt;&lt; <a class="code" href="gfield_8h.html#a3fa6a08a98b9f77bd86582b4773ccd25">positionof</a>(rand() % <a class="code" href="gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35">countHighBits</a>(field[i][a]), field[i][a]);</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        }</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                }</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7">nozero</a>(field)) <span class="keywordflow">break</span>;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        array&lt;array&lt;uint16_t,9&gt;,9&gt; oldfield = field;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">for</span>(;;){</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;          <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; difficulty; i++) {</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">int</span> a = rand() % 9, b = rand() % 9;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">if</span>(field[a][b] != 511) {field[a][b] = 511; }<span class="keywordflow">else</span>{i--; }</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;          }</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          <span class="keywordflow">if</span>(oldfield == <a class="code" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a>(field)) {<span class="keywordflow">return</span> field; }<span class="keywordflow">else</span>{field = oldfield;}</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div><div class="ttc" id="gfield_8h_html_a3fa6a08a98b9f77bd86582b4773ccd25"><div class="ttname"><a href="gfield_8h.html#a3fa6a08a98b9f77bd86582b4773ccd25">positionof</a></div><div class="ttdeci">uint8_t positionof(uint8_t position, uint16_t number)</div><div class="ttdoc">returns the posithion of the nth high bit </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00024">gfield.h:24</a></div></div>
+<div class="ttc" id="sfield_8h_html_a5635fc62a1602672c95f71075f2b6924"><div class="ttname"><a href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924">removeobvious</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; removeobvious(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">removes the already used fields from the other possibilitys of the fields </div><div class="ttdef"><b>Definition:</b> <a href="sfield_8h_source.html#l00033">sfield.h:33</a></div></div>
+<div class="ttc" id="gfield_8h_html_a9db4bbb2a14755e00000af4c42317b35"><div class="ttname"><a href="gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35">countHighBits</a></div><div class="ttdeci">int countHighBits(int i)</div><div class="ttdoc">will return the number of high bits </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00041">gfield.h:41</a></div></div>
 <div class="ttc" id="sfield_8h_html_ad3462e114b4823a2e44228b92065f146"><div class="ttname"><a href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146">solvefield</a></div><div class="ttdeci">array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; solvefield(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">calls removeobvious and removenotsoobvious until the sudoku is solved </div><div class="ttdef"><b>Definition:</b> <a href="sfield_8h_source.html#l00100">sfield.h:100</a></div></div>
-<div class="ttc" id="gfield_8h_html_ac1ff61c40b9bab8ebe99921f532161e7"><div class="ttname"><a href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7">nozero</a></div><div class="ttdeci">bool nozero(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">will check if there are any Zeros in your field </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00023">gfield.h:23</a></div></div>
+<div class="ttc" id="gfield_8h_html_ac1ff61c40b9bab8ebe99921f532161e7"><div class="ttname"><a href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7">nozero</a></div><div class="ttdeci">bool nozero(array&lt; array&lt; uint16_t, 9 &gt;, 9 &gt; field)</div><div class="ttdoc">will check if there are any Zeros in your field </div><div class="ttdef"><b>Definition:</b> <a href="gfield_8h_source.html#l00054">gfield.h:54</a></div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="gfield_8h_a51fc24fe0e97351f526d7185a51f161d_cgraph.png" border="0" usemap="#gfield_8h_a51fc24fe0e97351f526d7185a51f161d_cgraph" alt=""/></div>
 <map name="gfield_8h_a51fc24fe0e97351f526d7185a51f161d_cgraph" id="gfield_8h_a51fc24fe0e97351f526d7185a51f161d_cgraph">
-<area shape="rect" id="node2" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="291,20,401,47"/>
-<area shape="rect" id="node4" href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7" title="will check if there are any Zeros in your field " alt="" coords="157,20,219,47"/>
-<area shape="rect" id="node5" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="149,71,227,98"/>
-<area shape="rect" id="node3" href="sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="465,46,563,72"/>
-<area shape="rect" id="node6" href="sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="275,71,417,98"/>
+<area shape="rect" id="node2" href="sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="317,132,428,158"/>
+<area shape="rect" id="node4" href="gfield_8h.html#a3fa6a08a98b9f77bd86582b4773ccd25" title="returns the posithion of the nth high bit " alt="" coords="162,30,241,57"/>
+<area shape="rect" id="node5" href="gfield_8h.html#a9db4bbb2a14755e00000af4c42317b35" title="will return the number of high bits " alt="" coords="149,81,253,108"/>
+<area shape="rect" id="node6" href="gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7" title="will check if there are any Zeros in your field " alt="" coords="171,132,232,158"/>
+<area shape="rect" id="node7" href="sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="163,182,240,209"/>
+<area shape="rect" id="node3" href="sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="492,157,589,184"/>
+<area shape="rect" id="node8" href="sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="301,182,444,209"/>
 </map>
 </div>
 </p>
@@ -226,8 +274,8 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true only if there are no Zeros </dd></dl>
 
-<p>Definition at line <a class="el" href="gfield_8h_source.html#l00023">23</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                                             {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                        <span class="keywordflow">if</span>(field[i][a] == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="gfield_8h_source.html#l00054">54</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                             {</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 9; i++) {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> a = 0; a &lt; 9; a++) {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        <span class="keywordflow">if</span>(field[i][a] == 0) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div></div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -235,6 +283,55 @@ Here is the caller graph for this function:</div>
 <map name="gfield_8h_ac1ff61c40b9bab8ebe99921f532161e7_icgraph" id="gfield_8h_ac1ff61c40b9bab8ebe99921f532161e7_icgraph">
 <area shape="rect" id="node2" href="gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="115,5,211,32"/>
 <area shape="rect" id="node3" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="259,5,309,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a3fa6a08a98b9f77bd86582b4773ccd25"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t positionof </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the posithion of the nth high bit </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>is the position of the High bit you want if you only count High Bits </td></tr>
+    <tr><td class="paramname">number</td><td>is the number you wanna Analyse</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the postion of the nth High Bit </dd></dl>
+
+<p>Definition at line <a class="el" href="gfield_8h_source.html#l00024">24</a> of file <a class="el" href="gfield_8h_source.html">gfield.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                                                     {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  uint8_t NumberOfHighBits = 0;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0;; i++){</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(((number &gt;&gt; i) &amp; 1)){</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      NumberOfHighBits++;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordflow">if</span>(position == NumberOfHighBits) <span class="keywordflow">return</span> i;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div></div><!-- fragment -->
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="gfield_8h_a3fa6a08a98b9f77bd86582b4773ccd25_icgraph.png" border="0" usemap="#gfield_8h_a3fa6a08a98b9f77bd86582b4773ccd25_icgraph" alt=""/></div>
+<map name="gfield_8h_a3fa6a08a98b9f77bd86582b4773ccd25_icgraph" id="gfield_8h_a3fa6a08a98b9f77bd86582b4773ccd25_icgraph">
+<area shape="rect" id="node2" href="gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="132,5,228,32"/>
+<area shape="rect" id="node3" href="sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="276,5,327,32"/>
 </map>
 </div>
 </p>

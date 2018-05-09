@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['removenotsoobvious',['removenotsoobvious',['../sfield_8h.html#afa2fdb8dba6c13110e981818376dc086',1,'sfield.h']]],
-  ['removeobvious',['removeobvious',['../sfield_8h.html#a5635fc62a1602672c95f71075f2b6924',1,'sfield.h']]]
+  ['nozero',['nozero',['../gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7',1,'gfield.h']]]
 ];
