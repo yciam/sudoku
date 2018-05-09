@@ -3,13 +3,9 @@
 #ifndef GFIELD_H
 #define GFIELD_H
 
-#include <vector>
 #include <array>
 #include "sfield.h"
-#include <list>
 #include <iostream>
-#include <map>
-#include <algorithm>
 
 using namespace std;
 
