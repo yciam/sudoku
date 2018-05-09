@@ -18,7 +18,7 @@ using namespace std;
 
   @param field is the field you wanna check
 
-  @returns true only if there are no Zeros 
+  @returns true only if there are no Zeros
 */
 bool nozero(array<array<uint16_t,9>,9> field){
         for(int i = 0; i < 9; i++) {
@@ -56,10 +56,13 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                         for(int i = 0; i < 9; i++) {
                                 for(int a = 0; a < 9; a++) {
                                         field = removeobvious(field);
-                                        for(;;) {
-                                                uint16_t z = rand() % 9;
-                                                if(((field[i][a] >> z) & 1)) {field[i][a] = 1 << z; break; }
-                                                if(field[i][a] == 0){break;}
+                                        if(field[i][a] != 0){
+                                          vector<uint16_t> pn;
+                                          for(int o = 0; o < 9; o++){if(((field[i][a] >> o) & 1)){pn.push_back(o);}}
+                                          for(;;) {
+                                            uint16_t z = rand() % pn.size();
+                                            if(((field[i][a] >> pn[z]) & 1)) {field[i][a] = 1 << pn[z]; break; }
+                                          }
                                         }
                                 }
                         }
