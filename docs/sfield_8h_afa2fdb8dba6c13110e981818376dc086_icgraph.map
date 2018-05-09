@@ -1,4 +1,5 @@
 <map id="removenotsoobvious" name="removenotsoobvious">
-<area shape="rect" id="node2" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="196,5,273,32"/>
-<area shape="rect" id="node3" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="321,5,372,32"/>
+<area shape="rect" id="node2" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="196,31,273,57"/>
+<area shape="rect" id="node3" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="321,5,417,32"/>
+<area shape="rect" id="node4" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="465,31,516,57"/>
 </map>

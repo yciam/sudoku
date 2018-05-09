@@ -1,3 +1,5 @@
+///@file sfield.h
+
 #ifndef SFIELD_H
 #define SFIELD_H
 

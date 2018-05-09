@@ -1,3 +1,5 @@
+///@file gfield.h
+
 #ifndef GFIELD_H
 #define GFIELD_H
 
@@ -11,6 +13,13 @@
 
 using namespace std;
 
+/**
+  @brief will check if there are any Zeros in your field
+
+  @param field is the field you wanna check
+
+  @returns true only if there are no Zeros 
+*/
 bool nozero(array<array<uint16_t,9>,9> field){
         for(int i = 0; i < 9; i++) {
                 for(int a = 0; a < 9; a++) {

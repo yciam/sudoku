@@ -1,5 +1,7 @@
 <map id="generatefield" name="generatefield">
-<area shape="rect" id="node2" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="149,5,260,32"/>
-<area shape="rect" id="node4" href="$gfield_8h.html#ab7aff7bcc3ac4a1d590225de4cfb5632" title="ddraw" alt="" coords="176,56,233,83"/>
-<area shape="rect" id="node3" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="308,5,405,32"/>
+<area shape="rect" id="node2" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="291,20,401,47"/>
+<area shape="rect" id="node4" href="$gfield_8h.html#ac1ff61c40b9bab8ebe99921f532161e7" title="will check if there are any Zeros in your field " alt="" coords="157,20,219,47"/>
+<area shape="rect" id="node5" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="149,71,227,98"/>
+<area shape="rect" id="node3" href="$sfield_8h.html#a87cc48bbe552199336def1a4be6ef239" title="used to get the exact number of a field if there is only one possibility " alt="" coords="465,46,563,72"/>
+<area shape="rect" id="node6" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="275,71,417,98"/>
 </map>

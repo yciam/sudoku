@@ -7,9 +7,13 @@
 
 #define DIFFICULTY 20
 
+/**
+  @mainpage sudoku
+
+  @todo Make everything better
+*/
+
 using namespace std;
-
-
 
 /**
   @brief draws the Sudoku field

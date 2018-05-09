@@ -1,7 +1,7 @@
 <map id="exactnumber" name="exactnumber">
 <area shape="rect" id="node2" href="$sfield_8h.html#a5635fc62a1602672c95f71075f2b6924" title="removes the already used fields from the other possibilitys of the fields " alt="" coords="167,5,277,32"/>
 <area shape="rect" id="node6" href="$sfield_8h.html#afa2fdb8dba6c13110e981818376dc086" title="removes the other possibilitys if one of the possibilitys is the only option " alt="" coords="151,56,293,83"/>
-<area shape="rect" id="node3" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="341,5,437,32"/>
-<area shape="rect" id="node5" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="351,56,428,83"/>
-<area shape="rect" id="node4" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="485,31,536,57"/>
+<area shape="rect" id="node3" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="467,5,563,32"/>
+<area shape="rect" id="node5" href="$sfield_8h.html#ad3462e114b4823a2e44228b92065f146" title="calls removeobvious and removenotsoobvious until the sudoku is solved " alt="" coords="341,56,419,83"/>
+<area shape="rect" id="node4" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="611,31,661,57"/>
 </map>

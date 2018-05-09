@@ -1,13 +1,13 @@
 var NAVTREE =
 [
   [ "Sudoku", "index.html", [
-    [ "README", "md_README.html", null ],
+    [ "README", "md__home_yellow_Documents_Tutorial_F_Sudokuv2_sudoku_README.html", null ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ]
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -15,7 +15,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_1ec98ce50fa6ec55b40b8ffb1df38c3c.html"
+"dir_1b4e9dcb5e614c8bf5ef6ee320b9858c.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

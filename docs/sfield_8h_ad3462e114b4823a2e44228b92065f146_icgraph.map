@@ -1,3 +1,4 @@
 <map id="solvefield" name="solvefield">
-<area shape="rect" id="node2" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="131,5,181,32"/>
+<area shape="rect" id="node2" href="$gfield_8h.html#a51fc24fe0e97351f526d7185a51f161d" title="generates a sudoku field " alt="" coords="131,5,227,32"/>
+<area shape="rect" id="node3" href="$sudoku_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="275,31,325,57"/>
 </map>
