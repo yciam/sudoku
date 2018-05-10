@@ -2,10 +2,7 @@
 #include <array>
 #include "header/gfield.h"
 #include "header/sfield.h"
-#include <map>
 #include <chrono>
-
-#define DIFFICULTY 20
 
 /**
    @mainpage sudoku
@@ -21,13 +18,12 @@ using namespace std;
    @param field is your Sudoku Field
  */
 void draw(array<array<uint16_t,9>,9> field){
-        map<int, int> intmap;
-        intmap[1] = 1; intmap[2] = 2; intmap[4] = 3; intmap[8] = 4; intmap[16] = 5; intmap[32] = 6; intmap[64] = 7; intmap[128] = 8; intmap[256] = 9;
+  system("clear");
         cout << endl;
         for(int i = 0; i < 9; i++) {
                 cout << "| ";
                 for(int a = 0; a < 9; a++) {
-                        cout << intmap[(int)field[i][a]] << " ";
+                        cout << exactnumber(field[i][a])+1 << " ";
                         if((a+1) % 3 == 0) cout << "| ";
                         if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << endl; };
                 }
@@ -36,14 +32,31 @@ void draw(array<array<uint16_t,9>,9> field){
 
 int main(int argc, char const *argv[]) {
         srand(time(NULL));
-        auto begin = std::chrono::high_resolution_clock::now();
-        array<array<uint16_t,9>,9> field;
-        field = generatefield(DIFFICULTY);
+        array<array<uint16_t,9>,9> field, solvedfield;
+        cout << "Enter A difficulty Level between 1 and 55!" << endl;
+        int difficulty;
+        cin >> difficulty;
+        field = generatefield(difficulty);
+        solvedfield = solvefield(field);
+        while(field != solvedfield) {
+            int i, a, s;
+            draw(field);
+            cout << "Enter the Row:" << endl;
+            cin >> i;
+            cout << "Enter the Column:" << endl;
+            cin >> a;
+            cout << "Enter the Solution:" << endl;
+            cin >> s;
+            i--; a--;
+            if(exactnumber(solvedfield[i][a])+1 == s){field[i][a] = 1 << (s-1);}else{
+              cout << "That was Wrong!" << endl << endl << "Do you need some Help?" << endl;
+              string t;
+              cin >> t;
+              if(t == "yes" || t == "Yes"){field[i][a] = solvedfield[i][a];}
+            }
+        }
         draw(field);
-        field = solvefield(field);
-        draw(field);
-        auto end = std::chrono::high_resolution_clock::now();
-        std::cout << std::chrono::duration_cast<std::chrono::microseconds>(end-begin).count() << " microseconds" << std::endl;
-        while(true) {}
+        cout << "You solved the Sudoku!" << endl;
+        cin.ignore().get();
         return 0;
 }
