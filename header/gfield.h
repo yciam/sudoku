@@ -6,38 +6,57 @@
 #include <array>
 #include "sfield.h"
 #include <iostream>
+#include <thread>
 
 using namespace std;
 
 /**
-  @brief returns the posithion of the nth high bit
+   @brief draws the Sudoku field
 
-  @param position is the position of the High bit you want if you only count High Bits
-  @param number is the number you wanna Analyse
-
-  @returns the postion of the nth High Bit
-*/
-uint8_t positionof(uint8_t position, uint16_t number){
-  uint8_t NumberOfHighBits = 0;
-  for(int i = 0;; i++){
-    if(((number >> i) & 1)){
-      NumberOfHighBits++;
-      if(position == NumberOfHighBits) return i;
-    }
-  }
+   @param field is your Sudoku Field
+ */
+void draw(array<array<uint16_t,9>,9> field){
+        system("clear");
+        cout << endl;
+        for(int i = 0; i < 9; i++) {
+                cout << "| ";
+                for(int a = 0; a < 9; a++) {
+                        cout << exactnumber(field[i][a])+1 << " ";
+                        if((a+1) % 3 == 0) cout << "| ";
+                        if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << endl; };
+                }
+        }
 }
 
 /**
-  @brief will return the number of high bits
+   @brief returns the posithion of the nth high bit
 
-  @param i is obvious
+   @param position is the position of the High bit you want if you only count High Bits
+   @param number is the number you wanna Analyse
 
-  @returns the number of High Bits
-*/
+   @returns the postion of the nth High Bit
+ */
+uint8_t positionof(uint8_t position, uint16_t number){
+        uint8_t NumberOfHighBits = 0;
+        for(int i = 0;; i++) {
+                if(((number >> i) & 1)) {
+                        NumberOfHighBits++;
+                        if(position == NumberOfHighBits) return i;
+                }
+        }
+}
+
+/**
+   @brief will return the number of high bits
+
+   @param i is obvious
+
+   @returns the number of High Bits
+ */
 int countHighBits(int i) {
-     i = i - ((i >> 1) & 0x55555555);
-     i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
-     return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
+        i = i - ((i >> 1) & 0x55555555);
+        i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+        return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
 }
 
 /**
@@ -70,31 +89,43 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
         }
 
         array<array<uint16_t,9>,9> field;
-        for(;; ) {
+        array<array<uint16_t,9>,9> sfield;
+        array<array<uint16_t,9>,9> rfield;
+        for(int i = 0; i < 9; i++) {
+                for(int a = 0; a < 9; a++) {
+                        field[i][a] = 511;
+                        sfield[i][a] = 511;
+                        rfield[i][a] = 511;
+                }
+        }
 
-                for(int i = 0; i < 9; i++) {
-                        for(int a = 0; a < 9; a++) {
-                                field[i][a] = 511;
+        for(int i = 0; i < 9; i++) {
+                for(int a = 0; a < 9; a++) {
+                        draw(field);
+                        this_thread::sleep_for(chrono::milliseconds(300));
+                        rfield = field;
+                        rfield = removeobvious(field);
+                        if(rfield[i][a] != 0) {
+                          field[i][a] = 1 << positionof(rand() % countHighBits(rfield[i][a]), rfield[i][a]);
+                        }else{
+                                while(sfield[i][a] == 0 || rfield[i][a] == 0) {
+                                        field[i][a] = 511;
+                                        sfield[i][a] = 511;
+                                        if(a == 0) {if(i > 0) {i--; a = 8; }}else{a--; }
+                                        sfield[i][a] &= ~(1 << field[i][a]);
+                                        field[i][a] = sfield[i][a];
+                                }
                         }
                 }
-
-                for(int i = 0; i < 9; i++) {
-                        for(int a = 0; a < 9; a++) {
-                                field = removeobvious(field);
-                                if(field[i][a] != 0) field[i][a] = 1 << positionof(rand() % countHighBits(field[i][a]), field[i][a]);
-                        }
-                }
-
-                if(nozero(field)) break;
         }
 
         array<array<uint16_t,9>,9> oldfield = field;
-        for(;;){
-          for(int i = 0; i < difficulty; i++) {
-            int a = rand() % 9, b = rand() % 9;
-            if(field[a][b] != 511) {field[a][b] = 511; }else{i--; }
-          }
-          if(oldfield == solvefield(field)) {return field; }else{field = oldfield;}
+        for(;; ) {
+                for(int i = 0; i < difficulty; i++) {
+                        int a = rand() % 9, b = rand() % 9;
+                        if(field[a][b] != 511) {field[a][b] = 511; }else{i--; }
+                }
+                if(oldfield == solvefield(field) && nozero(field)) {return field; }else{field = oldfield; }
         }
 }
 #endif

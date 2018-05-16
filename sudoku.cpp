@@ -12,24 +12,6 @@
 
 using namespace std;
 
-/**
-   @brief draws the Sudoku field
-
-   @param field is your Sudoku Field
- */
-void draw(array<array<uint16_t,9>,9> field){
-  system("clear");
-        cout << endl;
-        for(int i = 0; i < 9; i++) {
-                cout << "| ";
-                for(int a = 0; a < 9; a++) {
-                        cout << exactnumber(field[i][a])+1 << " ";
-                        if((a+1) % 3 == 0) cout << "| ";
-                        if(a == 8) {cout << endl; if((i+1) % 3 == 0) cout << endl; };
-                }
-        }
-}
-
 int main(int argc, char const *argv[]) {
         srand(time(NULL));
         array<array<uint16_t,9>,9> field, solvedfield;
@@ -38,6 +20,7 @@ int main(int argc, char const *argv[]) {
         cin >> difficulty;
         field = generatefield(difficulty);
         solvedfield = solvefield(field);
+        /**
         while(field != solvedfield) {
             int i, a, s;
             draw(field);
@@ -55,6 +38,7 @@ int main(int argc, char const *argv[]) {
               if(t == "yes" || t == "Yes"){field[i][a] = solvedfield[i][a];}
             }
         }
+        */
         draw(field);
         cout << "You solved the Sudoku!" << endl;
         cin.ignore().get();
