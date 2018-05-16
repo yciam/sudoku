@@ -89,16 +89,16 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
         }
 
         array<array<uint16_t,9>,9> field;
-        array<array<uint16_t,9>,9> sfield;
         array<array<uint16_t,9>,9> rfield;
+        array<array<uint16_t,9>,9> sfield;
         for(int i = 0; i < 9; i++) {
                 for(int a = 0; a < 9; a++) {
                         field[i][a] = 511;
-                        sfield[i][a] = 511;
                         rfield[i][a] = 511;
+                        sfield[i][a] = 511;
                 }
         }
-
+        uint8_t lba = 81, lbi = 81;
         for(int i = 0; i < 9; i++) {
                 for(int a = 0; a < 9; a++) {
                         draw(field);
@@ -108,13 +108,18 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                         if(rfield[i][a] != 0) {
                           field[i][a] = 1 << positionof(rand() % countHighBits(rfield[i][a]), rfield[i][a]);
                         }else{
-                                while(sfield[i][a] == 0 || rfield[i][a] == 0) {
+                                for(;;){
+                                        if(a == 0) {if(i > 0) {i--; a = 8; }else{a = 0;}}else{a--; }
                                         field[i][a] = 511;
-                                        sfield[i][a] = 511;
-                                        if(a == 0) {if(i > 0) {i--; a = 8; }}else{a--; }
-                                        sfield[i][a] &= ~(1 << field[i][a]);
-                                        field[i][a] = sfield[i][a];
+                                        field[i][a] = removeobvious(field)[i][a];
+                                        field[i][a] &= ~(1 << exactnumber(field[i][a]));
+                                        if(countHighBits(field[i][a]) > 2 && ((i < lbi) || (i == lbi && a < lba))){lba = a; lbi = i; break;}
                                 }
+                                if(a == 0) {if(i > 0) {i--; a = 8; }else{a = 0;}}else{a--; }
+                                field[i][a] = 511;
+                                field[i][a] = removeobvious(field)[i][a];
+                                field[i][a] &= ~(1 << exactnumber(field[i][a]));
+                                if(a == 0) {if(i > 0) {i--; a = 8; }else{a = 0;}}else{a--; }
                         }
                 }
         }
