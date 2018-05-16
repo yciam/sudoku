@@ -101,8 +101,6 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
 
         for(int i = 0; i < 9; i++) {
                 for(int a = 0; a < 9; a++) {
-                        //draw(field);
-                        //this_thread::sleep_for(chrono::milliseconds(300));
                         rfield = field;
                         rfield = removeobvious(field);
                         if(rfield[i][a] != 0) {
@@ -114,7 +112,7 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                                         field[i][a] = 511;
                                         field[i][a] &= ~(1 << exactnumber(field[i][a]));
                                         field[i][a] = removeobvious(field)[i][a];
-                                        if(countHighBits(field[i][a]) > 2){break;} //i think the problem i right there
+                                        if(countHighBits(field[i][a]) > 2){break;}
                                 }
                                 if(a == 0) {if(i > 0) {i--; a = 8; }else{a = 0;}}else{a--; }
                                 field[i][a] = 511;
