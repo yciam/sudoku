@@ -16,8 +16,8 @@ int main(int argc, char const *argv[]) {
         srand(time(NULL));
         array<array<uint16_t,9>,9> field, solvedfield;
         cout << "Enter A difficulty Level between 1 and 55!" << endl;
-        int difficulty;
-        cin >> difficulty;
+        int difficulty = 0;
+        //cin >> difficulty;
         field = generatefield(difficulty);
         solvedfield = solvefield(field);
         /**
