@@ -130,6 +130,7 @@ array<array<uint16_t,9>,9> generatefield(int difficulty){
                         if(field[a][b] != 511) {field[a][b] = 511; }else{i--; }
                 }
                 if(oldfield == solvefield(field) && nozero(field)) {return field; }else{field = oldfield; }
+                if(!nozero(field)){draw(field); while(true){}}
         }
 }
 #endif
